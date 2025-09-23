@@ -21,7 +21,6 @@ export default function Home() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative z-10">
-              <div className="text-4xl mb-4">🤖</div>
               <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                 Play vs AI
               </h2>
@@ -64,21 +63,6 @@ export default function Home() {
               </h2>
               <p className="text-gray-600 dark:text-gray-400">
                 Challenge players worldwide
-              </p>
-              <p className="text-sm text-yellow-600 mt-2">Coming Soon</p>
-            </div>
-          </div>
-
-          {/* Puzzles - Coming Soon */}
-          <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 opacity-60 cursor-not-allowed">
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative z-10">
-              <div className="text-4xl mb-4">🧩</div>
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
-                Puzzles
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                Improve with chess puzzles
               </p>
               <p className="text-sm text-yellow-600 mt-2">Coming Soon</p>
             </div>

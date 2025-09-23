@@ -6,8 +6,8 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center min-h-screen p-8">
         {/* Title Section */}
         <div className="text-center mb-16">
-          <h1 className="text-7xl font-bold bg-gradient-to-r from-chess-primary to-chess-secondary bg-clip-text text-transparent mb-4">
-            Chess Master
+          <h1 className="text-7xl font-bold bg-slate-800 bg-clip-text text-transparent mb-4">
+            ChessGPT
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Choose your opponent
@@ -21,9 +21,8 @@ export default function Home() {
             href="/play/vs-bot"
             className="group relative flex-1 overflow-hidden rounded-2xl bg-white dark:bg-gray-800 p-12 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-600/10 to-slate-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative z-10 text-center">
-              <div className="text-6xl mb-6">🤖</div>
               <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3">
                 Play vs AI
               </h2>
@@ -39,50 +38,6 @@ export default function Home() {
                 </div>
                 <div className="text-sm text-gray-500 dark:text-gray-400">
                   • Instant gameplay
-                </div>
-              </div>
-              <div className="mt-6 inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold">
-                Start Playing
-                <svg
-                  className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </div>
-            </div>
-          </Link>
-
-          {/* Play vs Human */}
-          <Link
-            href="/play"
-            className="group relative flex-1 overflow-hidden rounded-2xl bg-white dark:bg-gray-800 p-12 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative z-10 text-center">
-              <div className="text-6xl mb-6">👥</div>
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3">
-                Play vs Human
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-                Challenge a friend locally
-              </p>
-              <div className="space-y-2">
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  • Two player mode
-                </div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  • Same device gameplay
-                </div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  • Perfect for practice
                 </div>
               </div>
               <div className="mt-6 inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold">

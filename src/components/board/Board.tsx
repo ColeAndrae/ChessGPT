@@ -79,21 +79,18 @@ interface ChessPiece {
 }
 
 export interface BoardProps {
-  fen?: string;
+  chess: Chess;
   orientation?: "white" | "black";
   onMove?: (from: string, to: string) => void;
   isPlayerTurn?: boolean;
-  onPlayerMove?: () => void;
 }
 
 const Board: React.FC<BoardProps> = ({
-  fen,
+  chess,
   orientation = "white",
   onMove,
   isPlayerTurn = true,
-  onPlayerMove,
 }) => {
-  const [chess] = useState(new Chess());
   const [board, setBoard] = useState<(ChessPiece | null)[][]>([]);
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
   const [possibleMoves, setPossibleMoves] = useState<string[]>([]);
@@ -107,13 +104,10 @@ const Board: React.FC<BoardProps> = ({
     from: string;
   } | null>(null);
 
-  // Initialize board
+  // Update board whenever chess instance changes
   useEffect(() => {
-    if (fen) {
-      chess.load(fen);
-    }
     updateBoardState();
-  }, [fen]);
+  }, [chess.fen()]);
 
   const updateBoardState = () => {
     const newBoard: (ChessPiece | null)[][] = [];
@@ -190,9 +184,6 @@ const Board: React.FC<BoardProps> = ({
         clearSelection();
         if (onMove) {
           onMove(from, to);
-        }
-        if (onPlayerMove) {
-          onPlayerMove();
         }
       }
     } catch (error) {
