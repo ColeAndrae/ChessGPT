@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Square from "./Square";
-import Piece from "./Piece";
+import Square from "@/components/board/Square";
+import Piece from "@/components/board/Piece";
 import { Chess } from "chess.js";
 
 type PieceType = "p" | "n" | "b" | "r" | "q" | "k";
