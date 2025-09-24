@@ -131,8 +131,8 @@ export default function VsBotPage() {
       <div className="bg-white dark:bg-gray-900 shadow-md border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-chess-primary to-chess-secondary bg-clip-text text-transparent">
-              Chess vs AI
+            <h1 className="text-3xl font-bold bg-slate-600 bg-clip-text text-transparent">
+              ChessGPT
             </h1>
             <div className="flex gap-4">
               <button
