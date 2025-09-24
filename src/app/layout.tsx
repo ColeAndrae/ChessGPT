@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Professional Chess App",
+  title: "ChessGPT",
   description: "A modern chess application built with Next.js",
 };
 
