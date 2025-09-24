@@ -231,14 +231,14 @@ const Board: React.FC<BoardProps> = ({
       : ["1", "2", "3", "4", "5", "6", "7", "8"];
 
   return (
-    <div className="flex flex-col items-center justify-center p-4">
+    <div className="flex flex-col items-center justify-center p-2 sm:p-4">
       <div className="relative">
         {/* Rank labels */}
-        <div className="absolute -left-8 top-0 h-full flex flex-col justify-around">
+        <div className="absolute -left-4 sm:-left-6 md:-left-8 top-0 h-full flex flex-col justify-around">
           {ranks.map((rank) => (
             <div
               key={rank}
-              className="text-sm font-semibold text-gray-600 dark:text-gray-400 h-16 flex items-center"
+              className="text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-400 h-12 sm:h-14 md:h-16 flex items-center"
             >
               {rank}
             </div>
@@ -246,11 +246,11 @@ const Board: React.FC<BoardProps> = ({
         </div>
 
         {/* File labels */}
-        <div className="absolute -bottom-8 left-0 w-full flex justify-around">
+        <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 left-0 w-full flex justify-around">
           {files.map((file) => (
             <div
               key={file}
-              className="text-sm font-semibold text-gray-600 dark:text-gray-400 w-16 text-center"
+              className="text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-400 w-12 sm:w-14 md:w-16 text-center"
             >
               {file}
             </div>
@@ -295,21 +295,25 @@ const Board: React.FC<BoardProps> = ({
         </div>
       </div>
 
-      {/* Game status */}
-      <div className="mt-6 text-center">
+      {/* Game status - responsive text sizes */}
+      <div className="mt-4 sm:mt-6 text-center">
         {chess.isCheckmate() && (
-          <div className="text-2xl font-bold text-red-600">
+          <div className="text-lg sm:text-xl md:text-2xl font-bold text-red-600">
             Checkmate! {chess.turn() === "w" ? "Black" : "White"} wins!
           </div>
         )}
         {chess.isDraw() && (
-          <div className="text-2xl font-bold text-yellow-600">Draw!</div>
+          <div className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-600">
+            Draw!
+          </div>
         )}
         {chess.inCheck() && !chess.isCheckmate() && (
-          <div className="text-xl font-semibold text-orange-600">Check!</div>
+          <div className="text-base sm:text-lg md:text-xl font-semibold text-orange-600">
+            Check!
+          </div>
         )}
         {!chess.isGameOver() && (
-          <div className="text-lg font-medium text-gray-700 dark:text-gray-300">
+          <div className="text-sm sm:text-base md:text-lg font-medium text-gray-700 dark:text-gray-300">
             {chess.turn() === "w" ? "White" : "Black"} to move
           </div>
         )}

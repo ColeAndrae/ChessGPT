@@ -131,8 +131,8 @@ export default function VsBotPage() {
       <div className="bg-white dark:bg-gray-900 shadow-md border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold bg-slate-600 bg-clip-text text-transparent">
-              ChessGPT
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-chess-primary to-chess-secondary bg-clip-text text-transparent">
+              Chess vs AI
             </h1>
             <div className="flex gap-4">
               <button
@@ -153,11 +153,11 @@ export default function VsBotPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Game Board */}
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          {/* Game Board - full width on mobile */}
           <div className="lg:col-span-2 flex justify-center">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-3 sm:p-4 md:p-6 w-full max-w-[500px] lg:max-w-none">
               <Board
                 chess={chess}
                 orientation={playerColor}
@@ -167,15 +167,15 @@ export default function VsBotPage() {
 
               {/* Game Status Display */}
               {(gameStatus || isThinking) && (
-                <div className="mt-4 text-center">
+                <div className="mt-3 sm:mt-4 text-center">
                   {isThinking && (
-                    <div className="text-lg font-medium text-blue-600 dark:text-blue-400 animate-pulse">
+                    <div className="text-sm sm:text-base md:text-lg font-medium text-blue-600 dark:text-blue-400 animate-pulse">
                       AI is thinking...
                     </div>
                   )}
                   {gameStatus && (
                     <div
-                      className={`text-xl font-bold ${
+                      className={`text-base sm:text-lg md:text-xl font-bold ${
                         gameStatus.includes("wins")
                           ? "text-red-600"
                           : gameStatus === "Check!"
@@ -191,20 +191,20 @@ export default function VsBotPage() {
             </div>
           </div>
 
-          {/* Side Panel */}
-          <div className="space-y-6">
+          {/* Side Panel - stacks on mobile */}
+          <div className="space-y-4 sm:space-y-6">
             {/* Game Settings */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6">
-              <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 sm:p-6">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-200 mb-3 sm:mb-4">
                 Game Settings
               </h2>
 
               {/* Difficulty Selection */}
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   AI Difficulty
                 </label>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                   {(
                     [
                       "beginner",
@@ -216,7 +216,7 @@ export default function VsBotPage() {
                     <button
                       key={diff}
                       onClick={() => startNewGame(playerColor, diff)}
-                      className={`px-3 py-2 rounded-lg font-medium transition-colors ${
+                      className={`px-2 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm rounded-lg font-medium transition-colors ${
                         difficulty === diff
                           ? "bg-blue-600 text-white"
                           : "bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
@@ -230,13 +230,13 @@ export default function VsBotPage() {
 
               {/* Color Selection */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Play as
                 </label>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                   <button
                     onClick={() => startNewGame("white", difficulty)}
-                    className={`px-3 py-2 rounded-lg font-medium transition-colors ${
+                    className={`px-2 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm rounded-lg font-medium transition-colors ${
                       playerColor === "white"
                         ? "bg-blue-600 text-white"
                         : "bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
@@ -246,7 +246,7 @@ export default function VsBotPage() {
                   </button>
                   <button
                     onClick={() => startNewGame("black", difficulty)}
-                    className={`px-3 py-2 rounded-lg font-medium transition-colors ${
+                    className={`px-2 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm rounded-lg font-medium transition-colors ${
                       playerColor === "black"
                         ? "bg-blue-600 text-white"
                         : "bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
